@@ -86,18 +86,14 @@ public class MatriculaService { // Use Case (Caso de Uso)
 
     Matricula matricula = new Matricula(cpf, codigoCurso);
 
-    matriculaRepository.save(matricula);
+    matriculaRepository.insert(matricula);
     // fim transação
 
     return matricula;
   }
 }
 
-
 class CursoController { // /curso/matricular
-
-
   void matricular() {
-
   }
 }

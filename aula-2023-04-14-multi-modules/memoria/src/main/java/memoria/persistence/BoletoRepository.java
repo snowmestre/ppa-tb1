@@ -15,7 +15,7 @@ public class BoletoRepository implements IBoletoRepository {
     return boletos.stream().filter(b->b.getCpf().equals(cpf)).toList();
   }
    //INSERT
-   public boolean insert(Boleto boleto) {
+   public Boolean insert(Boleto boleto) {
     if(!(boleto.getCpf() != null && (boleto.getCpf().length() > 0 && boleto.getCpf().length() < 11))) 
       return false;
     
@@ -30,5 +30,6 @@ public class BoletoRepository implements IBoletoRepository {
 
   public List<Boleto> findAll(){
     return boletos;
-  } 
+  }
+ 
 }

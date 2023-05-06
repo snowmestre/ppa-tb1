@@ -1,19 +1,17 @@
 package memoria.persistence;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import modelo.entidade.Matricula;
 import persistence.IMatriculaRepository;
 
 public class MatriculaRepository implements IMatriculaRepository {
-  static Map<String, Matricula> matriculas = new HashMap<>();
+ 
+  List<Matricula> matriculas = new ArrayList<Matricula>();
 
   @Override
- 
-  @Override
-  public void save(Matricula matricula) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'save'");
+  public void insert(Matricula matricula) {
+    matriculas.add(matricula);
   }
   
 }

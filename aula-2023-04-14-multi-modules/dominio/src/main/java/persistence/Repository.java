@@ -47,7 +47,7 @@ public class Repository<T, K> { // parâmetro de tipo <T>, "K" de Key
             String sql = String.format("SELECT %s FROM %s WHERE %s = ?",
                 colunas, tabela, pk.getName());
 
-            System.out.println(sql); // TODO: substituir por logging
+            System.out.println(sql); //substituir por logging
 
             PreparedStatement stmt = con.prepareStatement(sql);
 
@@ -60,7 +60,7 @@ public class Repository<T, K> { // parâmetro de tipo <T>, "K" de Key
             if (result.next()) {
                 objeto = clazz.getDeclaredConstructor().newInstance();
 
-                for (String campo : colunas.split(",")) { // TODO: desfazer gambi!
+                for (String campo : colunas.split(",")) { //desfazer gambi!
                     Field f = clazz.getDeclaredField(campo);
                     f.setAccessible(true);
                     
@@ -128,7 +128,7 @@ public class Repository<T, K> { // parâmetro de tipo <T>, "K" de Key
     public void save(T o) { // generics por erasure (apagamento)
 
         try {
-            // hard-coded (config estática no código) TODO: var ambiente
+            // hard-coded (config estática no código) var ambiente
             Connection con = DriverManager.getConnection("jdbc:sqlite:mochinho.db"); 
 
             final String tabela;
@@ -203,7 +203,7 @@ public class Repository<T, K> { // parâmetro de tipo <T>, "K" de Key
     // public void save(T o) {
 
     //     try {
-    //         // hard-coded (config estática no código) TODO: var ambiente
+    //         // hard-coded (config estática no código) var ambiente
     //         Connection con = DriverManager.getConnection("jdbc:sqlite:mochinho.db");
 
     //         Field[] fields = o.getClass().getDeclaredFields();

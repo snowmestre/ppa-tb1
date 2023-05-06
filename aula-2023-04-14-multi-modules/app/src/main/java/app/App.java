@@ -2,29 +2,39 @@ package app;
 
 import java.util.Optional;
 
-import modelo.entidade.Matricula;
+import memoria.persistence.AlunoRepository;
+import memoria.persistence.BoletoRepository;
+import memoria.persistence.CursoRepository;
+import memoria.persistence.MatriculaRepository;
+import memoria.persistence.ParametroRepository;
 import modelo.entidade.Tecnico;
 import modelo.service.MatriculaService;
 import modelo.service.ServiceException;
 import persistence.IAlunoRepository;
+import persistence.IBoletoRepository;
 import persistence.ICursoRepository;
+import persistence.IMatriculaRepository;
+import persistence.IParametroRepository;
 import persistence.Repository;
 
 public class App {
     
     public static void main(String[] args) {
 
-        IAlunoRepository alunoRepository;
-        ICursoRepository cursoRepository;
+        IAlunoRepository alunoRepository = new AlunoRepository();
+        ICursoRepository cursoRepository = new CursoRepository();
+        IParametroRepository paramRepository = new ParametroRepository();
+        IBoletoRepository boletoRepository = new BoletoRepository();
+        IMatriculaRepository matriculaRepository = new MatriculaRepository();
+        
 
         MatriculaService matriculaService = new MatriculaService(
             alunoRepository, 
             cursoRepository,
-            null,
-            null,
-            null);
-
-        Matricula m = matriculaService.matricular("12345678901", 123);
+            paramRepository,
+            boletoRepository,
+            matriculaRepository);
+      //  Matricula m = matriculaService.matricular("12345678901", 123);
 
         try {
             matriculaService.matricular("12345678912", 123);

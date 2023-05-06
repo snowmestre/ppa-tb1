@@ -8,6 +8,6 @@ public interface IAlunoRepository {
 
   Optional<Aluno> findByCpf(String cpf);
 
-  // class EntityNotFoundException extends Exception {}
+  boolean insert(Aluno aluno);
   
 }

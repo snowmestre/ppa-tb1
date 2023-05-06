@@ -65,4 +65,11 @@ public class Curso {
   public void setIdadeMinima(Integer idadeMinima) {
     this.idadeMinima = idadeMinima;
   }
+
+  @Override
+  public String toString() {
+    return "Curso [codigo = " + codigo + ", nome = " + nome + ", ementa = " + ementa + ", cargaHoraria = " + cargaHoraria
+        + ", vagas = " + vagas + ", inscritos = " + inscritos + ", dataInicio = " + dataInicio + ", idadeMinima = "
+        + idadeMinima + "]";
+  }
 }

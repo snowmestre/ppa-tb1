@@ -1,26 +1,31 @@
 package memoria.persistence;
 
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import modelo.entidade.Curso;
 import persistence.ICursoRepository;
 
 public class CursoRepository implements ICursoRepository {
-  static Map<String, Curso> cursos = new HashMap<>();
+  List<Curso> cursos = new ArrayList<>();
+
+  @Override
+  public void save(Curso curso) {
+    cursos.add(curso);
+  }
 
   @Override
   public Optional<Curso> findByCodigo(Integer codigoCurso) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'findByCodigo'");
+    return cursos.stream().filter(a -> a.getCodigo().equals(codigoCurso)).findAny();
   }
 
   @Override
   public void update(Curso curso) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'update'");
+    cursos.stream().filter(a -> a.equals(curso)).findFirst().ifPresent(c -> {
+      cursos.remove(c);
+      cursos.add(curso);
+    });
   }
-  
 }

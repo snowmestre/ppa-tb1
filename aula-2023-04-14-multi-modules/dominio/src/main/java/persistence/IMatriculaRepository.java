@@ -4,6 +4,6 @@ import modelo.entidade.Matricula;
 
 public interface IMatriculaRepository {
 
-	void save(Matricula matricula);
+	void insert(Matricula matricula);
   
 }

@@ -83,6 +83,6 @@ public class Aluno {
   }
   @Override
   public String toString() {
-    return "Aluno [id=" + id + ", cpf=" + cpf + ", nome=" + nome + ", email=" + email + "]";
+    return "Aluno [id = " + id + ", cpf = " + cpf + ", nome = " + nome + ", email = " + email + "]";
   }
 }
