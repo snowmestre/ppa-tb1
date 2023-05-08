@@ -19,11 +19,8 @@ public class AlunoRepository implements IAlunoRepository {
   }
   //INSERT
   public boolean insert(Aluno aluno) {
-    if(!(aluno.getCpf() != null && (aluno.getCpf().length() > 0 && aluno.getCpf().length() < 11))) 
-      return false;
-    
     alunos.put(aluno.getCpf(), aluno);
-      return true;
+    return true;
   }
   //DELETE
   public boolean deleteByCpf(String cpf) {

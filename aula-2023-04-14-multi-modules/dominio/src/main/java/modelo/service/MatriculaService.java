@@ -54,9 +54,7 @@ public class MatriculaService { // Use Case (Caso de Uso)
       throw new ServiceException("Curso com vagas esgotadas");
     }
 
-    Integer dias = paramRepository.findParam("DIAS_ATRASO_MATRICULA")
-      .map(p -> Integer.parseInt(p))
-      .orElse(3);
+    Integer dias = 3;
     
     if (LocalDate.now().isAfter(curso.getDataInicio().plusDays(dias))) {
       throw new ServiceException("Data inscrição passou mais de " + dias + " dias");

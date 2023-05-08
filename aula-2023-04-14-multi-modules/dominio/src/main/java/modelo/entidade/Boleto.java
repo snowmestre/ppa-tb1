@@ -11,6 +11,14 @@ public class Boleto {
   private Boolean pago;
   private String cpf;
 
+  public Boleto(Integer codigo, BigDecimal valor, LocalDate vencimento, Boolean pago, String cpf){
+    this.codigo = codigo;
+    this.valor = valor;
+    this.vencimento = vencimento;
+    this.pago = pago;
+    this.cpf = cpf;
+  }
+
   public String getCpf() {
       return cpf;
   }
@@ -43,7 +51,5 @@ public class Boleto {
   public void setPago(Boolean pago) {
     this.pago = pago;
   }
-
-  
 
 }

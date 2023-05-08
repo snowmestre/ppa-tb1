@@ -26,5 +26,10 @@ public class Matricula {
   public void setNumero(Integer numero) {
     this.numero = numero;
   }
+
+  @Override
+  public String toString() {
+    return "Matricula [cpf = " + cpf + ", codigoCurso = " + codigoCurso + "]";
+  }
   
 }

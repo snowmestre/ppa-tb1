@@ -13,6 +13,17 @@ public class Curso {
   private LocalDate dataInicio;
   private Integer idadeMinima;
 
+  public Curso(Integer codigo, String nome, String ementa, Integer cargaHoraria, Integer vagas, Integer inscritos, LocalDate dataInicio, Integer idadeMinima) {
+    this.codigo = codigo;
+    this.nome = nome;
+    this.ementa = ementa;
+    this.cargaHoraria = cargaHoraria;
+    this.vagas = vagas;
+    this.inscritos = inscritos;
+    this.dataInicio = dataInicio;
+    this.idadeMinima = idadeMinima;
+  }
+
   public Integer getCodigo() {
     return codigo;
   }

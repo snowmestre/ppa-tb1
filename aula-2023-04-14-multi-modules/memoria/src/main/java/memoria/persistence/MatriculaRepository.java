@@ -14,4 +14,7 @@ public class MatriculaRepository implements IMatriculaRepository {
     matriculas.add(matricula);
   }
   
+  public List<Matricula> findAll(){
+    return matriculas;
+  }
 }

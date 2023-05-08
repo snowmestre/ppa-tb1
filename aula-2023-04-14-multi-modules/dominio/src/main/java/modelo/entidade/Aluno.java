@@ -13,16 +13,17 @@ public class Aluno {
   public Aluno() {}
   
   public boolean isEmpty(){
-    if(id == null && cpf == null && nome == null && email == null && dataNascimento == null) 
+    if(id == null && cpf == null && nome == null && email == null) 
       return true;
     return false;   
   } 
 
-  public Aluno(Integer id, String cpf, String nome, String email) {
+  public Aluno(Integer id, String cpf, String nome, String email, LocalDate dataNascimento) {
     this.id = id;
     this.cpf = cpf;
     this.nome = nome;
     this.email = email;
+    this.dataNascimento = dataNascimento;
   }
 
   public Integer getId() {
