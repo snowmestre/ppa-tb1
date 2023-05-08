@@ -26,7 +26,7 @@ public class Repository<T, K> { // parâmetro de tipo <T>, "K" de Key
 
     public Optional<T> findById(K id) { // e se não encontrar? NotFoundException, null, Optional
         try {
-            Connection con = DriverManager.getConnection("jdbc:sqlite:mochinho.db");
+            Connection con = DriverManager.getConnection("jdbc:sqlite:matricula.db");
 
             final String tabela;
             final Field pk = Arrays.stream(clazz.getDeclaredFields())
@@ -91,7 +91,7 @@ public class Repository<T, K> { // parâmetro de tipo <T>, "K" de Key
 
     public void delete(K id) {
         try {
-            Connection con = DriverManager.getConnection("jdbc:sqlite:mochinho.db");
+            Connection con = DriverManager.getConnection("jdbc:sqlite:matricula.db");
 
             final String tabela;
             final Field pk;
@@ -129,7 +129,7 @@ public class Repository<T, K> { // parâmetro de tipo <T>, "K" de Key
 
         try {
             // hard-coded (config estática no código) var ambiente
-            Connection con = DriverManager.getConnection("jdbc:sqlite:mochinho.db"); 
+            Connection con = DriverManager.getConnection("jdbc:sqlite:matricula.db"); 
 
             final String tabela;
 

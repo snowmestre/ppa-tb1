@@ -6,8 +6,17 @@ plugins {
     id 'application'
 }
 
+// repositories {
+//     mavenCentral()
+//     maven {
+//         url "https://repo.spring.io/release"
+//     }
+//     maven {
+//         url "https://repository.jboss.org/maven2"
+//     }
+// }
+
 dependencies {
-    implementation 'org.apache.commons:commons-text'
     implementation project(':comum')
     implementation project(':dominio')
     implementation project(':memoria')
